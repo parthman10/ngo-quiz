@@ -1,0 +1,37 @@
+.timer-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.timer-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--light-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.timer-circle.warning {
+  background-color: var(--amber);
+}
+
+.timer-circle.critical {
+  background-color: var(--error);
+  animation: pulse 1s infinite;
+}
+
+.timer-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

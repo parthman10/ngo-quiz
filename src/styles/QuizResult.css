@@ -1,0 +1,143 @@
+.result-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.result-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-green);
+  margin-bottom: 2rem;
+}
+
+.score-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.score-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.score-details {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+.feedback-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+}
+
+.answers-title {
+  font-size: 1.5rem;
+  color: var(--dark-green);
+  margin-bottom: 1rem;
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.answer-item {
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--medium-gray);
+}
+
+.answer-item.correct {
+  background-color: rgba(76, 175, 80, 0.1);
+  border-left-color: var(--primary-green);
+}
+
+.answer-item.incorrect {
+  background-color: rgba(244, 67, 54, 0.1);
+  border-left-color: var(--error);
+}
+
+.answer-question {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.answer-details {
+  margin-bottom: 0.25rem;
+}
+
+.correct-text {
+  color: var(--primary-green);
+  font-weight: bold;
+}
+
+.incorrect-text {
+  color: var(--error);
+  font-weight: bold;
+}
+
+.continue-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--primary-yellow);
+  color: var(--black);
+  font-size: 1.2rem;
+  border-radius: 50px;
+}
+
+.continue-button:hover {
+  background-color: var(--amber);
+}
+
+@media (max-width: 600px) {
+  .result-container {
+    padding: 1.5rem;
+  }
+  
+  .result-title {
+    font-size: 1.8rem;
+  }
+  
+  .score-circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .score-text {
+    font-size: 2.5rem;
+  }
+}

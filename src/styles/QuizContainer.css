@@ -1,0 +1,19 @@
+.quiz-container {
+  width: 100%;
+  max-width: 800px;
+  min-height: 500px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 1rem;
+    min-height: 400px;
+  }
+}
