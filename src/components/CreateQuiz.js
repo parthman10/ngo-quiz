@@ -19,7 +19,7 @@ const CreateQuiz = ({ onNavigate }) => {
   const [success, setSuccess] = useState('');
   // Removed previewMode state: const [previewMode, setPreviewMode] = useState(false);
   // Removed creationMode state: const [creationMode, setCreationMode] = useState('manual');
-  const [excelFile, setExcelFile] = useState(null);
+  // const [excelFile, setExcelFile] = useState(null); // Removed this line - unused variable
   const [excelFileName, setExcelFileName] = useState('');
   const [parsedExcelData, setParsedExcelData] = useState(null);
   const [excelError, setExcelError] = useState(''); // Keep Excel-specific error state
@@ -150,7 +150,7 @@ const CreateQuiz = ({ onNavigate }) => {
   const processExcelFile = (file) => {
     if (!file) {
       setExcelError('No file provided.');
-      // setExcelFile(null); // Removed setExcelFile call
+      // setExcelFile(null); // Comment already indicates removal
       setExcelFileName('');
       setParsedExcelData(null);
       return;
@@ -219,13 +219,13 @@ const CreateQuiz = ({ onNavigate }) => {
         console.log('Parsed Excel Data for Drag-and-Drop:', formattedQuizData);
         setParsedExcelData(formattedQuizData); // Set the parsed data state
         setExcelFileName(file.name); // Confirm file name after successful parse
-        // setExcelFile(file); // Removed setExcelFile call
+        // setExcelFile(file); // Comment already indicates removal
 
       } catch (err) {
         console.error("Error parsing Excel file:", err);
         setExcelError(`Error parsing file: ${err.message}. Please ensure it's a valid Excel file with the correct format.`);
         setExcelFileName('');
-        // setExcelFile(null); // Removed setExcelFile call
+        // setExcelFile(null); // Comment already indicates removal
         setParsedExcelData(null); // Clear data on error
       }
     };
@@ -233,7 +233,7 @@ const CreateQuiz = ({ onNavigate }) => {
         console.error("FileReader error:", err);
         setExcelError('Error reading file.');
         setExcelFileName('');
-        // setExcelFile(null); // Removed setExcelFile call
+        // setExcelFile(null); // Comment already indicates removal
         setParsedExcelData(null); // Clear data on error
     }
     reader.readAsArrayBuffer(file);
@@ -283,7 +283,7 @@ const CreateQuiz = ({ onNavigate }) => {
       } else {
           setExcelError('Invalid file type. Please drop an .xlsx file.');
           setExcelFileName('');
-          // setExcelFile(null); // Removed setExcelFile call
+          // setExcelFile(null); // Comment already indicates removal
           setParsedExcelData(null);
       }
       event.dataTransfer.clearData(); // Clean up
@@ -332,7 +332,7 @@ const CreateQuiz = ({ onNavigate }) => {
       setIsSubmitting(false);
       // Reset form state
       setParsedExcelData(null);
-      // setExcelFile(null); // Removed setExcelFile call
+      // setExcelFile(null); // Comment already indicates removal
       setExcelFileName('');
       setQuizTitle('');
       setQuizCategory('general');
